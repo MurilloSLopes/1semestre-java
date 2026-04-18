@@ -6,13 +6,30 @@ public class Funcionario {
     private Profissao profissao;
     private double salario;
 
-    public Funcionario (String nome, long matricula, Profissao profissao, double salario){
-        this.nome = nome;
-        this.matricula = matricula;
-        this.profissao = profissao;
-        this.salario = salario;
+    //Construtores
+    public Funcionario () {
+
     }
 
+    public Funcionario (long matricula) {
+        this.matricula = matricula;
+    }
+
+    public Funcionario (long matricula, String nome) {
+        this(matricula);
+        this.nome = nome;
+    }
+
+    public Funcionario (long matricula, String nome,  Profissao profissao) {
+        this(matricula, nome);
+        this.profissao = profissao;
+    }
+
+    public String exibirDados(){
+        return "nome: " + nome + ", matricula: " + matricula + ", Profissao: " + profissao.getNome() + ", salario: " + salario;
+    }
+
+    //getters e setters
     public String getNome() {
         return nome;
     }
