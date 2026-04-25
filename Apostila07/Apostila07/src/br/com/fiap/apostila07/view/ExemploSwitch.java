@@ -23,8 +23,14 @@ public class ExemploSwitch {
                 JOptionPane.showMessageDialog(null, numero1 * numero2);
                 break;
             case "/":
-                JOptionPane.showMessageDialog(null, numero1 / numero2);
+                if (numero2 == 0){
+                    JOptionPane.showInputDialog(null, "nao e possivel dividir por zero");
+                } else {
+                    JOptionPane.showMessageDialog(null, numero1 / numero2);
+                }
                 break;
+                default:
+                    JOptionPane.showMessageDialog(null, "operacao invalida");
         }
     }
 }
